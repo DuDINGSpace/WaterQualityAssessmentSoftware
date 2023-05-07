@@ -1,0 +1,1771 @@
+Public Class Form1
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_jud_dibiao.Click
+        Dim PH As Double
+        If TextBox1.Text.Length = 0 Then
+            TextBox1.Text = "0"
+        End If
+        PH = TextBox1.Text
+        If PH > 6 And PH < 9 Then
+            Label27.Text = "水质达标"
+        ElseIf PH < 12 And PH >= 9 Then
+            Label27.Text = "水质不达标"
+        ElseIf PH = 0 Then
+            Label27.Text = ""
+        ElseIf PH <= 6 And PH > 0 Then
+            Label27.Text = "水质不达标"
+        Else
+            Label27.Text = "数据输入有误"
+        End If
+
+
+        Dim Oxy As Double
+        If TextBox2.Text.Length = 0 Then
+            TextBox2.Text = "0"
+        End If
+        Oxy = TextBox2.Text
+        If Oxy < 2 And Oxy > 0 Then
+            Label28.Text = "劣于Ⅴ类水"
+        ElseIf Oxy >= 2 And Oxy < 3 Then
+            Label28.Text = "Ⅴ类水 "
+        ElseIf Oxy >= 3 And Oxy < 5 Then
+            Label28.Text = "Ⅳ类水"
+        ElseIf Oxy >= 5 And Oxy < 6 Then
+            Label28.Text = "Ⅲ类水"
+        ElseIf Oxy >= 6 And Oxy < 7.5 Then
+            Label28.Text = "Ⅱ类水"
+        ElseIf Oxy >= 7.5 Then
+            Label28.Text = "Ⅰ类水"
+        ElseIf Oxy = 0 Then
+            Label28.Text = ""
+        End If
+
+        Dim Mn As Double
+        If TextBox3.Text.Length = 0 Then
+            TextBox3.Text = "0"
+        End If
+        Mn = TextBox3.Text
+        If Mn > 15 Then
+            Label29.Text = "劣于Ⅴ类水 "
+        ElseIf Mn <= 15 And Mn > 10 Then
+            Label29.Text = "Ⅴ类水 "
+        ElseIf Mn <= 10 And Mn > 6 Then
+            Label29.Text = "Ⅳ类水"
+        ElseIf Mn <= 6 And Mn > 4 Then
+            Label29.Text = "Ⅲ类水"
+        ElseIf Mn <= 4 And Mn > 2 Then
+            Label29.Text = "Ⅱ类水"
+        ElseIf Mn <= 2 And Mn > 0 Then
+            Label29.Text = "Ⅰ类水"
+        ElseIf Mn = 0 Then
+            Label29.Text = ""
+        End If
+
+        Dim COD As Double
+        If TextBox4.Text.Length = 0 Then
+            TextBox4.Text = "0"
+        End If
+        COD = TextBox4.Text
+        If COD > 15 Then
+            Label30.Text = "劣于Ⅴ类水"
+        ElseIf COD <= 40 And COD > 30 Then
+            Label30.Text = "Ⅴ类水"
+        ElseIf COD <= 30 And COD > 20 Then
+            Label30.Text = "Ⅳ类水"
+        ElseIf COD <= 20 And COD > 15 Then
+            Label30.Text = "Ⅲ类水"
+        ElseIf COD <= 15 And COD > 0 Then
+            Label30.Text = "Ⅰ类水"
+        ElseIf COD = 0 Then
+            Label30.Text = ""
+        End If
+
+        Dim BOD As Double
+        If TextBox5.Text.Length = 0 Then
+            TextBox5.Text = "0"
+        End If
+        BOD = TextBox5.Text
+        If BOD > 10 Then
+            Label31.Text = "劣于Ⅴ类水"
+        ElseIf BOD <= 10 And BOD > 6 Then
+            Label31.Text = "Ⅴ类水"
+        ElseIf BOD <= 6 And BOD > 4 Then
+            Label31.Text = "Ⅳ类水"
+        ElseIf BOD <= 4 And BOD > 3 Then
+            Label31.Text = "Ⅲ类水"
+        ElseIf BOD <= 3 And BOD > 0 Then
+            Label31.Text = "Ⅰ类水"
+        ElseIf BOD = 0 Then
+            Label31.Text = ""
+        End If
+
+        Dim NH3 As Double
+        If TextBox6.Text.Length = 0 Then
+            TextBox6.Text = "0"
+        End If
+        NH3 = TextBox6.Text
+        If NH3 > 2.0 Then
+            Label32.Text = "劣于Ⅴ类水"
+        ElseIf NH3 <= 2.0 And NH3 > 1.5 Then
+            Label32.Text = "Ⅴ类水"
+        ElseIf NH3 <= 1.5 And NH3 > 1.0 Then
+            Label32.Text = "Ⅳ类水"
+        ElseIf NH3 <= 1.0 And NH3 > 0.5 Then
+            Label32.Text = "Ⅲ类水"
+        ElseIf NH3 <= 0.5 And NH3 > 0.15 Then
+            Label32.Text = "Ⅱ类水"
+        ElseIf NH3 <= 0.15 And NH3 > 0 Then
+            Label32.Text = "Ⅰ类水"
+        ElseIf NH3 = 0 Then
+            Label32.Text = ""
+        End If
+
+        Dim P As Double
+        If TextBox7.Text.Length = 0 Then
+            TextBox7.Text = "0"
+        End If
+        P = TextBox7.Text
+        If P > 0.4 Then
+            Label33.Text = "劣于Ⅴ类水"
+        ElseIf P <= 0.4 And P > 0.3 Then
+            Label33.Text = "Ⅴ类水"
+        ElseIf P <= 0.3 And P > 0.2 Then
+            Label33.Text = "Ⅳ类水"
+        ElseIf P <= 0.2 And P > 0.1 Then
+            Label33.Text = "Ⅲ类水"
+        ElseIf P <= 0.1 And P > 0.02 Then
+            Label33.Text = "Ⅱ类水"
+        ElseIf P <= 0.02 And P > 0 Then
+            Label33.Text = "Ⅰ类水"
+        ElseIf P = 0 Then
+            Label33.Text = ""
+        End If
+
+        Dim N As Double
+        If TextBox8.Text.Length = 0 Then
+            TextBox8.Text = "0"
+        End If
+        N = TextBox8.Text
+        If N > 2.0 Then
+            Label34.Text = "劣于Ⅴ类水"
+        ElseIf N <= 2.0 And N > 1.5 Then
+            Label34.Text = "Ⅴ类水"
+        ElseIf N <= 1.5 And N > 1.0 Then
+            Label34.Text = "Ⅳ类水"
+        ElseIf N <= 1.0 And N > 0.5 Then
+            Label34.Text = "Ⅲ类水"
+        ElseIf N <= 0.5 And N > 0.2 Then
+            Label34.Text = "Ⅱ类水"
+        ElseIf N <= 0.2 And N > 0 Then
+            Label34.Text = "Ⅰ类水"
+        ElseIf N = 0 Then
+            Label34.Text = ""
+        End If
+
+        Dim cu As Double
+        If TextBox9.Text.Length = 0 Then
+            TextBox9.Text = "0"
+        End If
+        cu = TextBox9.Text
+        If cu > 1.0 Then
+            Label35.Text = "劣于Ⅴ类水"
+        ElseIf cu <= 1.0 And cu > 0.01 Then
+            Label35.Text = "Ⅱ类水"
+        ElseIf cu <= 0.01 And cu > 0 Then
+            Label35.Text = "Ⅰ类水"
+        ElseIf cu = 0 Then
+            Label35.Text = ""
+        End If
+
+        Dim zn As Double
+        If TextBox10.Text.Length = 0 Then
+            TextBox10.Text = "0"
+        End If
+        zn = TextBox10.Text
+        If zn > 2.0 Then
+            Label36.Text = "劣于Ⅴ类水"
+        ElseIf zn <= 2.0 And zn > 1.0 Then
+            Label36.Text = "Ⅳ类水"
+        ElseIf zn <= 1.0 And zn > 0.05 Then
+            Label36.Text = "Ⅱ类水"
+        ElseIf zn <= 0.05 And zn > 0 Then
+            Label36.Text = "Ⅰ类水"
+        ElseIf zn = 0 Then
+            Label36.Text = ""
+        End If
+
+        Dim F As Double
+        If TextBox12.Text.Length = 0 Then
+            TextBox12.Text = "0"
+        End If
+        F = TextBox12.Text
+        If F > 1.5 Then
+            Label37.Text = "劣于Ⅴ类水"
+        ElseIf F <= 1.5 And F > 1.0 Then
+            Label37.Text = "Ⅳ类水"
+        ElseIf F <= 1.0 And F > 0 Then
+            Label37.Text = "Ⅰ类水"
+        ElseIf F = 0 Then
+            Label37.Text = ""
+        End If
+
+        Dim se As Double
+        If TextBox13.Text.Length = 0 Then
+            TextBox13.Text = "0"
+        End If
+        se = TextBox13.Text
+        If se > 0.02 Then
+            Label38.Text = "劣于Ⅴ类水"
+        ElseIf se <= 0.02 And se > 0.01 Then
+            Label38.Text = "Ⅳ类水"
+        ElseIf se <= 0.01 And se > 0 Then
+            Label38.Text = "Ⅰ类水"
+        ElseIf se = 0 Then
+            Label38.Text = ""
+        End If
+
+        Dim shen As Double
+        If TextBox11.Text.Length = 0 Then
+            TextBox11.Text = "0"
+        End If
+        shen = TextBox11.Text
+        If shen > 0.1 Then
+            Label39.Text = "劣于Ⅴ类水"
+        ElseIf shen <= 0.01 And shen > 0.05 Then
+            Label39.Text = "Ⅳ类水"
+        ElseIf shen <= 0.05 And shen > 0 Then
+            Label39.Text = "Ⅰ类水"
+        ElseIf shen = 0 Then
+            Label39.Text = ""
+        End If
+
+        Dim Hg As Double
+        If TextBox16.Text.Length = 0 Then
+            TextBox16.Text = "0"
+        End If
+        Hg = TextBox16.Text
+        If Hg > 0.01 Then
+            Label40.Text = "劣于Ⅴ类水"
+        ElseIf Hg <= 0.01 And Hg > 0.0001 Then
+            Label40.Text = "Ⅳ类水"
+        ElseIf Hg <= 0.0001 And Hg > 0.00005 Then
+            Label40.Text = "Ⅲ类水"
+        ElseIf Hg <= 0.00005 And Hg > 0 Then
+            Label40.Text = "Ⅰ类水"
+        ElseIf Hg = 0 Then
+            Label40.Text = ""
+        End If
+
+        Dim cd As Double
+        If TextBox15.Text.Length = 0 Then
+            TextBox15.Text = "0"
+        End If
+        cd = TextBox15.Text
+        If cd > 0.01 Then
+            Label41.Text = "劣于Ⅴ类水"
+        ElseIf cd <= 0.01 And cd > 0.005 Then
+            Label41.Text = "Ⅴ类水"
+        ElseIf cd <= 0.005 And cd > 0.001 Then
+            Label41.Text = "Ⅱ类水"
+        ElseIf cd <= 0.001 And cd > 0 Then
+            Label41.Text = "Ⅰ类水"
+        ElseIf cd = 0 Then
+            Label41.Text = ""
+        End If
+
+        Dim cr As Double
+        If TextBox14.Text.Length = 0 Then
+            TextBox14.Text = "0"
+        End If
+        cr = TextBox14.Text
+        If cr > 0.1 Then
+            Label42.Text = "劣于Ⅴ类水"
+        ElseIf cr <= 0.1 And cr > 0.05 Then
+            Label42.Text = "Ⅴ类水"
+        ElseIf cr <= 0.05 And cr > 0.01 Then
+            Label42.Text = "Ⅱ类水"
+        ElseIf cr <= 0.001 And cr > 0 Then
+            Label42.Text = "Ⅰ类水"
+        ElseIf cr = 0 Then
+            Label42.Text = ""
+        End If
+
+        Dim pb As Double
+        If TextBox17.Text.Length = 0 Then
+            TextBox17.Text = "0"
+        End If
+        pb = TextBox17.Text
+        If pb > 0.1 Then
+            Label43.Text = "劣于Ⅴ类水"
+        ElseIf pb <= 0.1 And pb > 0.05 Then
+            Label43.Text = "Ⅴ类水"
+        ElseIf pb <= 0.05 And pb > 0.01 Then
+            Label43.Text = "Ⅲ类水"
+        ElseIf pb <= 0.01 And pb > 0 Then
+            Label43.Text = "Ⅰ类水"
+        ElseIf pb = 0 Then
+            Label43.Text = ""
+        End If
+
+        Dim cn As Double
+        If TextBox18.Text.Length = 0 Then
+            TextBox18.Text = "0"
+        End If
+        cn = TextBox18.Text
+        If cn > 0.2 Then
+            Label44.Text = "劣于Ⅴ类水"
+        ElseIf cn <= 0.2 And cn > 0.05 Then
+            Label44.Text = "Ⅲ类水"
+        ElseIf cn <= 0.05 And cn > 0.005 Then
+            Label44.Text = "Ⅱ类水"
+        ElseIf cn <= 0.005 And cn > 0 Then
+            Label44.Text = "Ⅰ类水"
+        ElseIf cn = 0 Then
+            Label44.Text = ""
+        End If
+
+        Dim fen As Double
+        If TextBox19.Text.Length = 0 Then
+            TextBox19.Text = "0"
+        End If
+        fen = TextBox19.Text
+        If fen > 0.1 Then
+            Label45.Text = "劣于Ⅴ类水"
+        ElseIf fen <= 0.1 And fen > 0.01 Then
+            Label45.Text = "Ⅴ类水"
+        ElseIf fen <= 0.01 And fen > 0.005 Then
+            Label45.Text = "Ⅳ类水"
+        ElseIf fen <= 0.005 And fen > 0.002 Then
+            Label45.Text = "Ⅲ类水"
+        ElseIf fen <= 0.002 And fen > 0 Then
+            Label45.Text = "Ⅰ类水"
+        ElseIf fen = 0 Then
+            Label45.Text = ""
+        End If
+
+        Dim shiyou As Double
+        If TextBox20.Text.Length = 0 Then
+            TextBox20.Text = "0"
+        End If
+        shiyou = TextBox20.Text
+        If shiyou > 1.0 Then
+            Label46.Text = "劣于Ⅴ类水"
+        ElseIf shiyou <= 0.1 And shiyou > 0.5 Then
+            Label46.Text = "Ⅴ类水"
+        ElseIf shiyou <= 0.5 And shiyou > 0.05 Then
+            Label46.Text = "Ⅳ类水"
+        ElseIf shiyou <= 0.05 And shiyou > 0 Then
+            Label46.Text = "Ⅰ类水"
+        ElseIf shiyou = 0 Then
+            Label46.Text = ""
+        End If
+
+        Dim yinlizi As Double
+        If TextBox21.Text.Length = 0 Then
+            TextBox21.Text = "0"
+        End If
+        yinlizi = TextBox21.Text
+        If yinlizi > 0.3 Then
+            Label47.Text = "劣于Ⅴ类水"
+        ElseIf yinlizi <= 0.3 And yinlizi > 0.2 Then
+            Label47.Text = "Ⅳ类水"
+        ElseIf yinlizi <= 0.2 And yinlizi > 0 Then
+            Label47.Text = "Ⅰ类水"
+        ElseIf yinlizi = 0 Then
+            Label47.Text = ""
+        End If
+
+        Dim S As Double
+        If TextBox22.Text.Length = 0 Then
+            TextBox22.Text = "0"
+        End If
+        S = TextBox22.Text
+        If S > 1.0 Then
+            Label48.Text = "劣于Ⅴ类水"
+        ElseIf S <= 1.0 And S > 0.5 Then
+            Label48.Text = "Ⅴ类水"
+        ElseIf S <= 0.5 And S > 0.2 Then
+            Label48.Text = "Ⅳ类水"
+        ElseIf S <= 0.2 And S > 0.1 Then
+            Label48.Text = "Ⅲ类水"
+        ElseIf S <= 0.1 And S > 0.05 Then
+            Label48.Text = "Ⅱ类水"
+        ElseIf S <= 0.05 And S > 0 Then
+            Label48.Text = "Ⅰ类水"
+        ElseIf S = 0 Then
+            Label48.Text = ""
+        End If
+
+        Dim dachang As Double
+        If TextBox23.Text.Length = 0 Then
+            TextBox23.Text = "0"
+        End If
+        dachang = TextBox23.Text
+        If dachang > 40000 Then
+            Label49.Text = "劣于Ⅴ类水"
+        ElseIf dachang <= 40000 And dachang > 20000 Then
+            Label49.Text = "Ⅴ类水"
+        ElseIf dachang <= 20000 And dachang > 10000 Then
+            Label49.Text = "Ⅳ类水"
+        ElseIf dachang <= 10000 And dachang > 2000 Then
+            Label49.Text = "Ⅲ类水"
+        ElseIf dachang <= 2000 And dachang > 200 Then
+            Label49.Text = "Ⅱ类水"
+        ElseIf dachang <= 200 And dachang > 0 Then
+            Label49.Text = "Ⅰ类水"
+        ElseIf dachang = 0 Then
+            Label49.Text = ""
+        End If
+    End Sub
+
+    Private Sub btn_inq_dibiao_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_inq_dibiao.Click
+        Dim x As String
+        x = InputBox("请输入您想要查询的水质级别：")
+        If x = "Ⅰ类水" Or x = "一类水" Then
+            TextBox1.Text = "6-9"
+            TextBox2.Text = "≥7.5"
+            TextBox3.Text = "≤2"
+            TextBox4.Text = "≤15"
+            TextBox5.Text = "≤3"
+            TextBox6.Text = "≤0.15"
+            TextBox7.Text = "≤0.02"
+            TextBox8.Text = "≤0.2"
+            TextBox9.Text = "≤0.01"
+            TextBox10.Text = "≤0.05"
+            TextBox12.Text = "≤1.0"
+            TextBox13.Text = "≤0.01"
+            TextBox11.Text = "≤0.05"
+            TextBox16.Text = "≤0.00005"
+            TextBox15.Text = "≤0.001"
+            TextBox14.Text = "≤0.01"
+            TextBox17.Text = "≤0.01"
+            TextBox18.Text = "≤0.005"
+            TextBox19.Text = "≤0.002"
+            TextBox20.Text = "≤0.05"
+            TextBox21.Text = "≤0.2"
+            TextBox22.Text = "≤0.05"
+            TextBox23.Text = "≤200"
+            Label27.Text = "Ⅰ类水"
+            Label28.Text = "Ⅰ类水"
+            Label29.Text = "Ⅰ类水"
+            Label30.Text = "Ⅰ类水"
+            Label31.Text = "Ⅰ类水"
+            Label32.Text = "Ⅰ类水"
+            Label33.Text = "Ⅰ类水"
+            Label34.Text = "Ⅰ类水"
+            Label35.Text = "Ⅰ类水"
+            Label36.Text = "Ⅰ类水"
+            Label37.Text = "Ⅰ类水"
+            Label38.Text = "Ⅰ类水"
+            Label39.Text = "Ⅰ类水"
+            Label40.Text = "Ⅰ类水"
+            Label41.Text = "Ⅰ类水"
+            Label42.Text = "Ⅰ类水"
+            Label43.Text = "Ⅰ类水"
+            Label44.Text = "Ⅰ类水"
+            Label45.Text = "Ⅰ类水"
+            Label46.Text = "Ⅰ类水"
+            Label47.Text = "Ⅰ类水"
+            Label48.Text = "Ⅰ类水"
+            Label49.Text = "Ⅰ类水"
+        ElseIf x = "Ⅱ类水" Or x = "二类水" Then
+            TextBox1.Text = "6-9"
+            TextBox2.Text = "6-7.5"
+            TextBox3.Text = "2-4"
+            TextBox4.Text = "≤15"
+            TextBox5.Text = "≤3"
+            TextBox6.Text = "0.15-0.5"
+            TextBox7.Text = "0.02-0.1"
+            TextBox8.Text = "0.2-0.5"
+            TextBox9.Text = "0.01-1.0"
+            TextBox10.Text = "0.05-1.0"
+            TextBox12.Text = "≤1.0"
+            TextBox13.Text = "≤0.01"
+            TextBox11.Text = "≤0.05"
+            TextBox16.Text = "≤0.00005"
+            TextBox15.Text = "≤0.005"
+            TextBox14.Text = "0.01-0.05"
+            TextBox17.Text = "≤0.01"
+            TextBox18.Text = "0.005-0.05"
+            TextBox19.Text = "≤0.002"
+            TextBox20.Text = "≤0.05"
+            TextBox21.Text = "≤0.2"
+            TextBox22.Text = "0.05-0.1"
+            TextBox23.Text = "200-2000"
+            Label27.Text = "Ⅱ类水"
+            Label28.Text = "Ⅱ类水"
+            Label29.Text = "Ⅱ类水"
+            Label30.Text = "Ⅱ类水"
+            Label31.Text = "Ⅱ类水"
+            Label32.Text = "Ⅱ类水"
+            Label33.Text = "Ⅱ类水"
+            Label34.Text = "Ⅱ类水"
+            Label35.Text = "Ⅱ类水"
+            Label36.Text = "Ⅱ类水"
+            Label37.Text = "Ⅱ类水"
+            Label38.Text = "Ⅱ类水"
+            Label39.Text = "Ⅱ类水"
+            Label40.Text = "Ⅱ类水"
+            Label41.Text = "Ⅱ类水"
+            Label42.Text = "Ⅱ类水"
+            Label43.Text = "Ⅱ类水"
+            Label44.Text = "Ⅱ类水"
+            Label45.Text = "Ⅱ类水"
+            Label46.Text = "Ⅱ类水"
+            Label47.Text = "Ⅱ类水"
+            Label48.Text = "Ⅱ类水"
+            Label49.Text = "Ⅱ类水"
+        ElseIf x = "Ⅲ类水" Or x = "三类水" Then
+            TextBox1.Text = "6-9"
+            TextBox2.Text = "5-6"
+            TextBox3.Text = "4-6"
+            TextBox4.Text = "15-20"
+            TextBox5.Text = "3-4"
+            TextBox6.Text = "0.5-1.0"
+            TextBox7.Text = "0.1-0.2"
+            TextBox8.Text = "0.5-1.0"
+            TextBox9.Text = "≤1.0"
+            TextBox10.Text = "≤1.0"
+            TextBox12.Text = "≤1.0"
+            TextBox13.Text = "≤0.01"
+            TextBox11.Text = "≤0.05"
+            TextBox16.Text = "0.00005-0.0001"
+            TextBox15.Text = "≤0.005"
+            TextBox14.Text = "≤0.05"
+            TextBox17.Text = "0.01-0.05"
+            TextBox18.Text = "0.05-0.2"
+            TextBox19.Text = "0.002-0.005"
+            TextBox20.Text = "≤0.05"
+            TextBox21.Text = "≤0.2"
+            TextBox22.Text = "0.1-0.2"
+            TextBox23.Text = "2000-10000"
+            Label27.Text = "Ⅲ类水"
+            Label28.Text = "Ⅲ类水"
+            Label29.Text = "Ⅲ类水"
+            Label30.Text = "Ⅲ类水"
+            Label31.Text = "Ⅲ类水"
+            Label32.Text = "Ⅲ类水"
+            Label33.Text = "Ⅲ类水"
+            Label34.Text = "Ⅲ类水"
+            Label35.Text = "Ⅲ类水"
+            Label36.Text = "Ⅲ类水"
+            Label37.Text = "Ⅲ类水"
+            Label38.Text = "Ⅲ类水"
+            Label39.Text = "Ⅲ类水"
+            Label40.Text = "Ⅲ类水"
+            Label41.Text = "Ⅲ类水"
+            Label42.Text = "Ⅲ类水"
+            Label43.Text = "Ⅲ类水"
+            Label44.Text = "Ⅲ类水"
+            Label45.Text = "Ⅲ类水"
+            Label46.Text = "Ⅲ类水"
+            Label47.Text = "Ⅲ类水"
+            Label48.Text = "Ⅲ类水"
+            Label49.Text = "Ⅲ类水"
+        ElseIf x = "Ⅳ类水" Or x = "四类水" Then
+            TextBox1.Text = "6-9"
+            TextBox2.Text = "3-5"
+            TextBox3.Text = "6-10"
+            TextBox4.Text = "20-30"
+            TextBox5.Text = "4-6"
+            TextBox6.Text = "1.0-1.5"
+            TextBox7.Text = "0.2-0.3"
+            TextBox8.Text = "1.0-1.5"
+            TextBox9.Text = "≤1.0"
+            TextBox10.Text = "1.0-2.0"
+            TextBox12.Text = "1.0-1.5"
+            TextBox13.Text = "0.01-0.02"
+            TextBox11.Text = "0.05-0.1"
+            TextBox16.Text = "0.0001-0.001"
+            TextBox15.Text = "≤0.005"
+            TextBox14.Text = "≤0.05"
+            TextBox17.Text = "≤0.05"
+            TextBox18.Text = "≤0.2"
+            TextBox19.Text = "0.005-0.01"
+            TextBox20.Text = "0.05-0.5"
+            TextBox21.Text = "0.2-0.3"
+            TextBox22.Text = "0.2-0.5"
+            TextBox23.Text = "10000-20000"
+            Label27.Text = "Ⅳ类水"
+            Label28.Text = "Ⅳ类水"
+            Label29.Text = "Ⅳ类水"
+            Label30.Text = "Ⅳ类水"
+            Label31.Text = "Ⅳ类水"
+            Label32.Text = "Ⅳ类水"
+            Label33.Text = "Ⅳ类水"
+            Label34.Text = "Ⅳ类水"
+            Label35.Text = "Ⅳ类水"
+            Label36.Text = "Ⅳ类水"
+            Label37.Text = "Ⅳ类水"
+            Label38.Text = "Ⅳ类水"
+            Label39.Text = "Ⅳ类水"
+            Label40.Text = "Ⅳ类水"
+            Label41.Text = "Ⅳ类水"
+            Label42.Text = "Ⅳ类水"
+            Label43.Text = "Ⅳ类水"
+            Label44.Text = "Ⅳ类水"
+            Label45.Text = "Ⅳ类水"
+            Label46.Text = "Ⅳ类水"
+            Label47.Text = "Ⅳ类水"
+            Label48.Text = "Ⅳ类水"
+            Label49.Text = "Ⅳ类水"
+        ElseIf x = "Ⅴ类水" Or x = "五类水" Then
+            TextBox1.Text = "6-9"
+            TextBox2.Text = "2-3"
+            TextBox3.Text = "10-15"
+            TextBox4.Text = "30-40"
+            TextBox5.Text = "6-10"
+            TextBox6.Text = "1.5-2.0"
+            TextBox7.Text = "0.3-0.4"
+            TextBox8.Text = "1.5-2.0"
+            TextBox9.Text = "≤1.0"
+            TextBox10.Text = "≤2.0"
+            TextBox12.Text = "≤1.5"
+            TextBox13.Text = "≤0.02"
+            TextBox11.Text = "≤0.1"
+            TextBox16.Text = "≤0.001"
+            TextBox15.Text = "0.005-0.01"
+            TextBox14.Text = "0.05-0.1"
+            TextBox17.Text = "0.05-0.1"
+            TextBox18.Text = "≤0.2"
+            TextBox19.Text = "0.01-0.1"
+            TextBox20.Text = "0.5-1.0"
+            TextBox21.Text = "≤0.3"
+            TextBox22.Text = "0.5-1.0"
+            TextBox23.Text = "20000-40000"
+            Label27.Text = "Ⅴ类水"
+            Label28.Text = "Ⅴ类水"
+            Label29.Text = "Ⅴ类水"
+            Label30.Text = "Ⅴ类水"
+            Label31.Text = "Ⅴ类水"
+            Label32.Text = "Ⅴ类水"
+            Label33.Text = "Ⅴ类水"
+            Label34.Text = "Ⅴ类水"
+            Label35.Text = "Ⅴ类水"
+            Label36.Text = "Ⅴ类水"
+            Label37.Text = "Ⅴ类水"
+            Label38.Text = "Ⅴ类水"
+            Label39.Text = "Ⅴ类水"
+            Label40.Text = "Ⅴ类水"
+            Label41.Text = "Ⅴ类水"
+            Label42.Text = "Ⅴ类水"
+            Label43.Text = "Ⅴ类水"
+            Label44.Text = "Ⅴ类水"
+            Label45.Text = "Ⅴ类水"
+            Label46.Text = "Ⅴ类水"
+            Label47.Text = "Ⅴ类水"
+            Label48.Text = "Ⅴ类水"
+            Label49.Text = "Ⅴ类水"
+        Else
+            MsgBox("输入有误，请重新输入！", MsgBoxStyle.Critical, "错误提示")
+        End If
+
+    End Sub
+
+    Private Sub btn_save_dibiao_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_save_dibiao.Click
+        Dim filewriter As New System.IO.StreamWriter("D:\地表水水质报告.txt")
+        filewriter.WriteLine(Label1.Text & "          " & TextBox1.Text & "          " & Label27.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label2.Text & "          " & TextBox2.Text & "          " & Label28.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label3.Text & "          " & TextBox3.Text & "          " & Label29.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label4.Text & "          " & TextBox4.Text & "          " & Label30.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label5.Text & "          " & TextBox5.Text & "          " & Label31.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label6.Text & "          " & TextBox6.Text & "          " & Label32.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label7.Text & "          " & TextBox7.Text & "          " & Label33.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label8.Text & "          " & TextBox8.Text & "          " & Label34.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label9.Text & "          " & TextBox9.Text & "          " & Label35.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label10.Text & "          " & TextBox10.Text & "          " & Label36.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label11.Text & "          " & TextBox12.Text & "          " & Label37.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label12.Text & "          " & TextBox13.Text & "          " & Label38.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label13.Text & "          " & TextBox11.Text & "          " & Label39.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label16.Text & "          " & TextBox16.Text & "          " & Label40.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label14.Text & "          " & TextBox15.Text & "          " & Label41.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label15.Text & "          " & TextBox14.Text & "          " & Label42.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label18.Text & "          " & TextBox17.Text & "          " & Label43.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label19.Text & "          " & TextBox18.Text & "          " & Label44.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label20.Text & "          " & TextBox19.Text & "          " & Label45.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label21.Text & "          " & TextBox20.Text & "          " & Label46.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label22.Text & "          " & TextBox21.Text & "          " & Label47.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label23.Text & "          " & TextBox22.Text & "          " & Label48.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label24.Text & "          " & TextBox23.Text & "          " & Label49.Text)
+        filewriter.Close()
+    End Sub
+
+    Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        RadioButton1.Checked = True
+        RadioButton2.Checked = False
+        RadioButton3.Checked = False
+        Label65.Text = "溴酸盐"
+        Label66.Text = "甲醛"
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton1.CheckedChanged
+        Label65.Text = "溴酸盐"
+        Label66.Text = "甲醛"
+        TextBox36.ReadOnly = False
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton2.CheckedChanged
+        Label65.Text = "亚氯酸盐"
+        Label66.Text = "无"
+        TextBox36.Text = ""
+        TextBox36.ReadOnly = True
+    End Sub
+
+    Private Sub RadioButton3_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton3.CheckedChanged
+        Label65.Text = "氯酸盐"
+        Label66.Text = "无"
+        TextBox36.Text = ""
+        TextBox36.ReadOnly = True
+    End Sub
+
+    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim shen As Double
+        If TextBox24.Text.Length = 0 Then
+            TextBox24.Text = "0"
+        End If
+        shen = TextBox24.Text
+        If shen <= 0.01 And shen > 0 Then
+            Label67.Text = "水质合格"
+        ElseIf shen > 0.01 Then
+            Label67.Text = "水质不合格"
+        ElseIf shen = 0 Then
+            Label67.Text = ""
+        End If
+
+        Dim cg As Double
+        If TextBox25.Text.Length = 0 Then
+            TextBox25.Text = "0"
+        End If
+        cg = TextBox25.Text
+        If cg <= 0.005 And cg > 0 Then
+            Label68.Text = "水质合格"
+        ElseIf cg > 0.005 Then
+            Label68.Text = "水质不合格"
+        ElseIf cg = 0 Then
+            Label68.Text = ""
+        End If
+
+        Dim cr As Double
+        If TextBox26.Text.Length = 0 Then
+            TextBox26.Text = "0"
+        End If
+            cr = TextBox26.Text
+        If cr > 0.05 Then
+            Label69.Text = "水质不合格"
+        ElseIf cr <= 0.05 And cr > 0 Then
+            Label69.Text = "水质合格"
+        ElseIf cr = 0 Then
+            Label69.Text = ""
+        End If
+
+        Dim pb As Double
+        If TextBox27.Text.Length = 0 Then
+            TextBox27.Text = "0"
+        End If
+            pb = TextBox27.Text
+        If pb > 0.01 Then
+            Label70.Text = "水质不合格"
+        ElseIf pb <= 0.01 And pb > 0 Then
+            Label70.Text = "水质合格"
+        ElseIf pb = 0 Then
+            Label70.Text = ""
+        End If
+
+        Dim hg As Double
+        If TextBox28.Text.Length = 0 Then
+            TextBox28.Text = "0"
+        End If
+        hg = TextBox28.Text
+        If hg > 0.001 Then
+            Label71.Text = "水质不合格"
+        ElseIf hg <= 0.01 And hg > 0 Then
+            Label71.Text = "水质合格"
+        ElseIf hg = 0 Then
+            Label71.Text = ""
+        End If
+
+        Dim xi As Double
+        If TextBox29.Text.Length = 0 Then
+            TextBox29.Text = "0"
+        End If
+            xi = TextBox29.Text
+        If xi > 0.01 Then
+            Label72.Text = "水质不合格"
+        ElseIf xi <= 0.01 And xi > 0 Then
+            Label72.Text = "水质合格"
+        ElseIf xi = 0 Then
+            Label72.Text = ""
+        End If
+
+        Dim cn As Double
+        If TextBox30.Text.Length = 0 Then
+            TextBox30.Text = "0"
+        End If
+        cn = TextBox30.Text
+        If cn > 0.05 Then
+            Label73.Text = "水质不合格"
+        ElseIf cn <= 0.05 And cn > 0 Then
+            Label73.Text = "水质合格"
+        ElseIf cn = 0 Then
+            Label73.Text = ""
+        End If
+
+
+        Dim f As Double
+        If TextBox31.Text.Length = 0 Then
+            TextBox31.Text = "0"
+        End If
+        f = TextBox31.Text
+        If f > 1.0 Then
+            Label74.Text = "水质不合格"
+        ElseIf f <= 1.0 And f > 0 Then
+            Label74.Text = "水质合格"
+        ElseIf f = 0 Then
+            Label74.Text = ""
+        End If
+
+        Dim xiaosuan As Double
+        If TextBox32.Text.Length = 0 Then
+            TextBox32.Text = "0"
+        End If
+        xiaosuan = TextBox32.Text
+        If xiaosuan > 10 Then
+            Label75.Text = "水质不合格"
+        ElseIf xiaosuan <= 10 And xiaosuan > 0 Then
+            Label75.Text = "水质合格"
+        ElseIf xiaosuan = 0 Then
+            Label75.Text = ""
+        End If
+
+
+        Dim sanlv As Double
+        If TextBox33.Text.Length = 0 Then
+            TextBox33.Text = "0"
+        End If
+        sanlv = TextBox33.Text
+        If sanlv > 0.06 Then
+            Label76.Text = "水质不合格"
+        ElseIf sanlv < 0.06 And sanlv > 0 Then
+            Label76.Text = "水质合格"
+        ElseIf sanlv = 0 Then
+            Label76.Text = ""
+        End If
+
+
+        Dim silvhua As Double
+        If TextBox34.Text.Length = 0 Then
+            TextBox34.Text = "0"
+        End If
+        silvhua = TextBox34.Text
+        If silvhua > 0.002 Then
+            Label77.Text = "水质不合格"
+        ElseIf silvhua <= 0.002 And silvhua > 0 Then
+            Label77.Text = "水质合格"
+        ElseIf silvhua = 0 Then
+            Label77.Text = ""
+        End If
+
+
+        If RadioButton1.Checked = True Then
+            Dim xiusuan As Double
+            If TextBox35.Text.Length = 0 Then
+                TextBox35.Text = "0"
+            End If
+            xiusuan = TextBox35.Text
+            If xiusuan > 0.01 Then
+                Label78.Text = "水质合格"
+            ElseIf xiusuan <= 0.01 And xiusuan > 0 Then
+                Label78.Text = "水质合格"
+            ElseIf xiusuan = 0 Then
+                Label78.Text = ""
+            End If
+
+            Dim jiaquan As Double
+            If TextBox36.Text.Length = 0 Then
+                TextBox36.Text = "0"
+            End If
+            jiaquan = TextBox36.Text
+            If jiaquan > 0.9 Then
+                Label79.Text = "水质不合格"
+            ElseIf jiaquan <= 0.9 And jiaquan > 0 Then
+                Label79.Text = "水质合格"
+            ElseIf jiaquan = 0 Then
+                Label79.Text = ""
+            End If
+        End If
+
+
+        If RadioButton2.Checked = True Then
+            Dim yalvsuan As Double
+            If TextBox35.Text.Length = 0 Then
+                TextBox35.Text = "0"
+            End If
+            yalvsuan = TextBox35.Text
+            If yalvsuan > 0.7 Then
+                Label78.Text = "水质不合格"
+            ElseIf yalvsuan <= 0.7 Then
+                Label78.Text = "水质合格"
+            ElseIf yalvsuan = 0 Then
+                Label78.Text = ""
+            End If
+        End If
+
+
+        If RadioButton3.Checked = True Then
+            Dim lvsuan As Double
+            If TextBox35.Text.Length = 0 Then
+                TextBox35.Text = "0"
+            End If
+            lvsuan = TextBox35.Text
+            If lvsuan > 0.7 Then
+                Label78.Text = "水质不合格"
+            ElseIf lvsuan <= 0.7 And lvsuan > 0 Then
+                Label78.Text = "水质合格"
+            ElseIf lvsuan = 0 Then
+                Label78.Text = ""
+            End If
+        End If
+
+
+        Dim sedu As Double
+        If TextBox37.Text.Length = 0 Then
+            TextBox37.Text = "0"
+        End If
+        sedu = TextBox37.Text
+        If sedu > 15 Then
+            Label93.Text = "水质不合格"
+        ElseIf sedu <= 15 And sedu > 0 Then
+            Label93.Text = "水质合格"
+        ElseIf sedu = 0 Then
+            Label93.Text = ""
+        End If
+
+
+        Dim hunzhuo As Double
+        If TextBox38.Text.Length = 0 Then
+            TextBox38.Text = "0"
+        End If
+        hunzhuo = TextBox38.Text
+        If hunzhuo > 1 Then
+            Label94.Text = "水质不合格"
+        ElseIf hunzhuo <= 1 And hunzhuo > 0 Then
+            Label94.Text = "水质合格"
+        ElseIf hunzhuo = 0 Then
+            Label94.Text = ""
+        End If
+
+
+        Dim ph As Double
+        If TextBox39.Text.Length = 0 Then
+            TextBox39.Text = "0"
+        End If
+        ph = TextBox39.Text
+        If ph < 6.5 And ph > 0 Then
+            Label95.Text = "水质不合格"
+        ElseIf ph > 8.5 Then
+            Label95.Text = "水质不合格"
+        ElseIf ph = 0 Then
+            Label95.Text = ""
+        ElseIf ph >= 6.5 And ph <= 8.5 Then
+            Label95.Text = "水质合格"
+        End If
+
+
+        Dim al As Double
+        If TextBox40.Text.Length = 0 Then
+            TextBox40.Text = "0"
+        End If
+        al = TextBox40.Text
+        If al > 0.2 Then
+            Label96.Text = "水质不合格"
+        ElseIf al <= 0.2 And al > 0 Then
+            Label96.Text = "水质合格"
+        ElseIf al = 0 Then
+            Label96.Text = ""
+        End If
+
+        Dim fe As Double
+        If TextBox41.Text.Length = 0 Then
+            TextBox41.Text = "0"
+        End If
+        fe = TextBox41.Text
+        If fe > 0.3 Then
+            Label97.Text = "水质不合格"
+        ElseIf fe <= 0.3 And fe > 0 Then
+            Label97.Text = "水质合格"
+        ElseIf fe = 0 Then
+            Label97.Text = ""
+        End If
+
+
+        Dim mn As Double
+        If TextBox42.Text.Length = 0 Then
+            TextBox42.Text = "0"
+        End If
+        mn = TextBox42.Text
+        If mn > 0.1 Then
+            Label98.Text = "水质不合格"
+        ElseIf mn <= 0.1 And mn > 0 Then
+            Label98.Text = "水质合格"
+        ElseIf mn = 0 Then
+            Label98.Text = ""
+        End If
+
+
+        Dim cu As Double
+        If TextBox43.Text.Length = 0 Then
+            TextBox43.Text = "0"
+        End If
+        cu = TextBox43.Text
+        If cu > 1.0 Then
+            Label99.Text = "水质不合格"
+        ElseIf cu <= 1.0 And cu > 0 Then
+            Label99.Text = "水质合格"
+        ElseIf cu = 0 Then
+            Label99.Text = ""
+        End If
+
+
+        Dim zn As Double
+        If TextBox44.Text.Length = 0 Then
+            TextBox44.Text = "0"
+        End If
+        zn = TextBox44.Text
+        If zn > 1.0 Then
+            Label100.Text = "水质不合格"
+        ElseIf zn <= 1.0 And zn > 0 Then
+            Label100.Text = "水质合格"
+        ElseIf zn = 0 Then
+            Label100.Text = ""
+        End If
+
+
+        Dim lvhuawu As Double
+        If TextBox45.Text.Length = 0 Then
+            TextBox45.Text = "0"
+        End If
+        lvhuawu = TextBox45.Text
+        If lvhuawu > 250 Then
+            Label101.Text = "水质不合格"
+        ElseIf lvhuawu <= 250 And lvhuawu > 0 Then
+            Label101.Text = "水质合格"
+        ElseIf lvhuawu = 0 Then
+            Label101.Text = ""
+        End If
+
+
+        Dim liusuanyan As Double
+        If TextBox46.Text.Length = 0 Then
+            TextBox46.Text = "0"
+        End If
+        liusuanyan = TextBox46.Text
+        If liusuanyan > 250 Then
+            Label102.Text = "水质不合格"
+        ElseIf liusuanyan <= 250 And liusuanyan > 0 Then
+            Label102.Text = "水质合格"
+        ElseIf liusuanyan = 0 Then
+            Label102.Text = ""
+        End If
+
+
+        Dim rongjiexing As Double
+        If TextBox47.Text.Length = 0 Then
+            TextBox47.Text = "0"
+        End If
+        rongjiexing = TextBox47.Text
+        If rongjiexing > 1000 Then
+            Label103.Text = "水质不合格"
+        ElseIf rongjiexing <= 1000 And rongjiexing > 0 Then
+            Label103.Text = "水质合格"
+        ElseIf rongjiexing = 0 Then
+            Label103.Text = ""
+        End If
+
+
+        Dim zongyingdu As Double
+        If TextBox48.Text.Length = 0 Then
+            TextBox48.Text = "0"
+        End If
+        zongyingdu = TextBox48.Text
+        If zongyingdu > 450 Then
+            Label104.Text = "水质不合格"
+        ElseIf zongyingdu <= 450 And zongyingdu > 0 Then
+            Label104.Text = "水质合格"
+        ElseIf zongyingdu = 0 Then
+            Label104.Text = ""
+        End If
+
+
+        Dim haoyangliang As Double
+        If TextBox49.Text.Length = 0 Then
+            TextBox49.Text = "0"
+        End If
+        haoyangliang = TextBox49.Text
+        If haoyangliang > 3 Then
+            Label105.Text = "水质不合格"
+        ElseIf haoyangliang <= 3 And haoyangliang > 0 Then
+            Label105.Text = "水质合格"
+        ElseIf haoyangliang = 0 Then
+            Label105.Text = ""
+        End If
+
+
+        Dim huifafen As Double
+        If TextBox50.Text.Length = 0 Then
+            TextBox50.Text = "0"
+        End If
+        huifafen = TextBox50.Text
+        If huifafen > 0.002 Then
+            Label106.Text = "水质不合格"
+        ElseIf huifafen <= 0.002 And huifafen > 0 Then
+            Label106.Text = "水质合格"
+        ElseIf huifafen = 0 Then
+            Label106.Text = ""
+        End If
+
+
+        Dim yinlizi As Double
+        If TextBox51.Text.Length = 0 Then
+            TextBox51.Text = "0"
+        End If
+        yinlizi = TextBox51.Text
+        If yinlizi > 0.3 Then
+            Label107.Text = "水质不合格"
+        ElseIf yinlizi <= 0.3 And yinlizi > 0 Then
+            Label107.Text = "水质合格"
+        ElseIf yinlizi = 0 Then
+            Label107.Text = ""
+        End If
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        TextBox24.Text = "≤0.01"
+        TextBox25.Text = "≤0.005"
+        TextBox26.Text = "≤0.05"
+        TextBox27.Text = "≤0.01"
+        TextBox28.Text = "≤0.001"
+        TextBox29.Text = "≤0.01"
+        TextBox30.Text = "≤0.05"
+        TextBox31.Text = "≤1.0"
+        TextBox32.Text = "≤10"
+        TextBox33.Text = "≤0.06"
+        TextBox34.Text = "≤0.002"
+
+
+        TextBox37.Text = "≤1"
+        TextBox38.Text = "≤1"
+        TextBox39.Text = "6.5-8.5"
+        TextBox40.Text = "≤0.2"
+        TextBox41.Text = "≤0.3"
+        TextBox42.Text = "≤0.1"
+        TextBox43.Text = "≤1.0"
+        TextBox44.Text = "≤1.0"
+        TextBox45.Text = "≤250"
+        TextBox46.Text = "≤250"
+        TextBox47.Text = "≤1000"
+        TextBox48.Text = "≤450"
+        TextBox49.Text = "≤3"
+        TextBox50.Text = "≤0.002"
+        TextBox51.Text = "≤0.3"
+
+        If RadioButton1.Checked = True Then
+            TextBox35.Text = "≤0.01"
+            TextBox36.Text = "≤0.9"
+        End If
+        If RadioButton2.Checked = True Then
+            TextBox35.Text = "≤0.7"
+        End If
+        If RadioButton3.Checked = True Then
+            TextBox35.Text = "≤0.7"
+        End If
+    End Sub
+
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Dim filewriter As New System.IO.StreamWriter("D:\生活饮用水水质报告.txt")
+        filewriter.WriteLine("毒理指标")
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine("          ")
+
+        filewriter.WriteLine(Label54.Text & "          " & TextBox24.Text & "          " & Label67.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label55.Text & "          " & TextBox25.Text & "          " & Label68.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label56.Text & "          " & TextBox26.Text & "          " & Label69.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label57.Text & "          " & TextBox27.Text & "          " & Label70.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label58.Text & "          " & TextBox28.Text & "          " & Label71.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label59.Text & "          " & TextBox29.Text & "          " & Label72.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label60.Text & "          " & TextBox30.Text & "          " & Label73.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label61.Text & "          " & TextBox31.Text & "          " & Label74.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label62.Text & "          " & TextBox32.Text & "          " & Label75.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label63.Text & "          " & TextBox33.Text & "          " & Label76.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label64.Text & "          " & TextBox34.Text & "          " & Label77.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label65.Text & "          " & TextBox35.Text & "          " & Label78.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label66.Text & "          " & TextBox36.Text & "          " & Label79.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine("感官性状和一般化学指标")
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label80.Text & "          " & TextBox37.Text & "          " & Label93.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label81.Text & "          " & TextBox38.Text & "          " & Label94.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label82.Text & "          " & TextBox39.Text & "          " & Label95.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label83.Text & "          " & TextBox40.Text & "          " & Label96.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label84.Text & "          " & TextBox41.Text & "          " & Label97.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label85.Text & "          " & TextBox42.Text & "          " & Label98.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label86.Text & "          " & TextBox43.Text & "          " & Label99.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label87.Text & "          " & TextBox44.Text & "          " & Label100.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label88.Text & "          " & TextBox45.Text & "          " & Label101.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label89.Text & "          " & TextBox46.Text & "          " & Label102.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label90.Text & "          " & TextBox47.Text & "          " & Label103.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label91.Text & "          " & TextBox48.Text & "          " & Label104.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label92.Text & "          " & TextBox49.Text & "          " & Label105.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label108.Text & "          " & TextBox50.Text & "          " & Label106.Text)
+        filewriter.WriteLine("          ")
+        filewriter.WriteLine(Label109.Text & "          " & TextBox51.Text & "          " & Label107.Text)
+        filewriter.Close()
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        If RadioButton4.Checked = True Then
+            Dim a As String
+            a = "Ⅰ"
+            If InStr(Label28.Text, a) = 0 Then
+                Label28.BackColor = Color.Red
+            End If
+            If InStr(Label29.Text, a) = 0 Then
+                Label29.BackColor = Color.Red
+            End If
+            If InStr(Label30.Text, a) = 0 Then
+                Label30.BackColor = Color.Red
+            End If
+            If InStr(Label31.Text, a) = 0 Then
+                Label31.BackColor = Color.Red
+            End If
+            If InStr(Label32.Text, a) = 0 Then
+                Label32.BackColor = Color.Red
+            End If
+            If InStr(Label33.Text, a) = 0 Then
+                Label33.BackColor = Color.Red
+            End If
+            If InStr(Label34.Text, a) = 0 Then
+                Label34.BackColor = Color.Red
+            End If
+            If InStr(Label35.Text, a) = 0 Then
+                Label35.BackColor = Color.Red
+            End If
+            If InStr(Label36.Text, a) = 0 Then
+                Label36.BackColor = Color.Red
+            End If
+            If InStr(Label37.Text, a) = 0 Then
+                Label37.BackColor = Color.Red
+            End If
+            If InStr(Label38.Text, a) = 0 Then
+                Label38.BackColor = Color.Red
+            End If
+            If InStr(Label39.Text, a) = 0 Then
+                Label39.BackColor = Color.Red
+            End If
+            If InStr(Label40.Text, a) = 0 Then
+                Label40.BackColor = Color.Red
+            End If
+            If InStr(Label41.Text, a) = 0 Then
+                Label41.BackColor = Color.Red
+            End If
+            If InStr(Label42.Text, a) = 0 Then
+                Label42.BackColor = Color.Red
+            End If
+            If InStr(Label43.Text, a) = 0 Then
+                Label43.BackColor = Color.Red
+            End If
+            If InStr(Label44.Text, a) = 0 Then
+                Label44.BackColor = Color.Red
+            End If
+            If InStr(Label45.Text, a) = 0 Then
+                Label45.BackColor = Color.Red
+            End If
+            If InStr(Label46.Text, a) = 0 Then
+                Label46.BackColor = Color.Red
+            End If
+            If InStr(Label47.Text, a) = 0 Then
+                Label47.BackColor = Color.Red
+            End If
+            If InStr(Label48.Text, a) = 0 Then
+                Label48.BackColor = Color.Red
+            End If
+            If InStr(Label49.Text, a) = 0 Then
+                Label49.BackColor = Color.Red
+            End If
+        End If
+
+
+        If RadioButton5.Checked = True Then
+            Dim a As String
+            Dim b As String
+            a = "Ⅱ"
+            b = "Ⅰ"
+            If InStr(Label28.Text, a) = 0 And InStr(Label28.Text, b) = 0 Then
+                Label28.BackColor = Color.Red
+            End If
+            If InStr(Label29.Text, a) = 0 And InStr(Label29.Text, b) = 0 Then
+                Label29.BackColor = Color.Red
+            End If
+            If InStr(Label30.Text, a) = 0 And InStr(Label30.Text, b) = 0 Then
+                Label30.BackColor = Color.Red
+            End If
+            If InStr(Label31.Text, a) = 0 And InStr(Label31.Text, b) = 0 Then
+                Label31.BackColor = Color.Red
+            End If
+            If InStr(Label32.Text, a) = 0 And InStr(Label32.Text, b) = 0 Then
+                Label32.BackColor = Color.Red
+            End If
+            If InStr(Label33.Text, a) = 0 And InStr(Label33.Text, b) = 0 Then
+                Label33.BackColor = Color.Red
+            End If
+            If InStr(Label34.Text, a) = 0 And InStr(Label34.Text, b) = 0 Then
+                Label34.BackColor = Color.Red
+            End If
+            If InStr(Label35.Text, a) = 0 And InStr(Label35.Text, b) = 0 Then
+                Label35.BackColor = Color.Red
+            End If
+            If InStr(Label36.Text, a) = 0 And InStr(Label36.Text, b) = 0 Then
+                Label36.BackColor = Color.Red
+            End If
+            If InStr(Label37.Text, a) = 0 And InStr(Label37.Text, b) = 0 Then
+                Label37.BackColor = Color.Red
+            End If
+            If InStr(Label38.Text, a) = 0 And InStr(Label38.Text, b) = 0 Then
+                Label38.BackColor = Color.Red
+            End If
+            If InStr(Label39.Text, a) = 0 And InStr(Label39.Text, b) = 0 Then
+                Label39.BackColor = Color.Red
+            End If
+            If InStr(Label40.Text, a) = 0 And InStr(Label40.Text, b) = 0 Then
+                Label40.BackColor = Color.Red
+            End If
+            If InStr(Label41.Text, a) = 0 And InStr(Label41.Text, b) = 0 Then
+                Label41.BackColor = Color.Red
+            End If
+            If InStr(Label42.Text, a) = 0 And InStr(Label42.Text, b) = 0 Then
+                Label42.BackColor = Color.Red
+            End If
+            If InStr(Label43.Text, a) = 0 And InStr(Label43.Text, b) = 0 Then
+                Label43.BackColor = Color.Red
+            End If
+            If InStr(Label44.Text, a) = 0 And InStr(Label44.Text, b) = 0 Then
+                Label44.BackColor = Color.Red
+            End If
+            If InStr(Label45.Text, a) = 0 And InStr(Label45.Text, b) = 0 Then
+                Label45.BackColor = Color.Red
+            End If
+            If InStr(Label46.Text, a) = 0 And InStr(Label46.Text, b) = 0 Then
+                Label46.BackColor = Color.Red
+            End If
+            If InStr(Label47.Text, a) = 0 And InStr(Label47.Text, b) = 0 Then
+                Label47.BackColor = Color.Red
+            End If
+            If InStr(Label48.Text, a) = 0 And InStr(Label48.Text, b) = 0 Then
+                Label48.BackColor = Color.Red
+            End If
+            If InStr(Label49.Text, a) = 0 And InStr(Label49.Text, b) = 0 Then
+                Label49.BackColor = Color.Red
+            End If
+        End If
+
+
+        If RadioButton6.Checked = True Then
+            Dim a As String
+            Dim b As String
+            Dim c As String
+            a = "Ⅱ"
+            b = "Ⅰ"
+            c = "Ⅲ"
+            If InStr(Label28.Text, a) = 0 And InStr(Label28.Text, b) = 0 And InStr(Label28.Text, c) = 0 Then
+                Label28.BackColor = Color.Red
+            End If
+            If InStr(Label29.Text, a) = 0 And InStr(Label29.Text, b) = 0 And InStr(Label29.Text, c) = 0 Then
+                Label29.BackColor = Color.Red
+            End If
+            If InStr(Label30.Text, a) = 0 And InStr(Label30.Text, b) = 0 And InStr(Label30.Text, c) = 0 Then
+                Label30.BackColor = Color.Red
+            End If
+            If InStr(Label31.Text, a) = 0 And InStr(Label31.Text, b) = 0 And InStr(Label31.Text, c) = 0 Then
+                Label31.BackColor = Color.Red
+            End If
+            If InStr(Label32.Text, a) = 0 Or InStr(Label32.Text, b) = 0 And InStr(Label32.Text, c) = 0 Then
+                Label32.BackColor = Color.Red
+            End If
+            If InStr(Label33.Text, a) = 0 Or InStr(Label33.Text, b) = 0 And InStr(Label33.Text, c) = 0 Then
+                Label33.BackColor = Color.Red
+            End If
+            If InStr(Label34.Text, a) = 0 Or InStr(Label34.Text, b) = 0 And InStr(Label34.Text, c) = 0 Then
+                Label34.BackColor = Color.Red
+            End If
+            If InStr(Label35.Text, a) = 0 Or InStr(Label35.Text, b) = 0 And InStr(Label35.Text, c) = 0 Then
+                Label35.BackColor = Color.Red
+            End If
+            If InStr(Label36.Text, a) = 0 Or InStr(Label36.Text, b) = 0 And InStr(Label36.Text, c) = 0 Then
+                Label36.BackColor = Color.Red
+            End If
+            If InStr(Label37.Text, a) = 0 Or InStr(Label37.Text, b) = 0 And InStr(Label37.Text, c) = 0 Then
+                Label37.BackColor = Color.Red
+            End If
+            If InStr(Label38.Text, a) = 0 Or InStr(Label38.Text, b) = 0 And InStr(Label38.Text, c) = 0 Then
+                Label38.BackColor = Color.Red
+            End If
+            If InStr(Label39.Text, a) = 0 Or InStr(Label39.Text, b) = 0 And InStr(Label39.Text, c) = 0 Then
+                Label39.BackColor = Color.Red
+            End If
+            If InStr(Label40.Text, a) = 0 Or InStr(Label40.Text, b) = 0 And InStr(Label40.Text, c) = 0 Then
+                Label40.BackColor = Color.Red
+            End If
+            If InStr(Label41.Text, a) = 0 Or InStr(Label41.Text, b) = 0 And InStr(Label41.Text, c) = 0 Then
+                Label41.BackColor = Color.Red
+            End If
+            If InStr(Label42.Text, a) = 0 Or InStr(Label42.Text, b) = 0 And InStr(Label42.Text, c) = 0 Then
+                Label42.BackColor = Color.Red
+            End If
+            If InStr(Label43.Text, a) = 0 Or InStr(Label43.Text, b) = 0 And InStr(Label43.Text, c) = 0 Then
+                Label43.BackColor = Color.Red
+            End If
+            If InStr(Label44.Text, a) = 0 Or InStr(Label44.Text, b) = 0 And InStr(Label44.Text, c) = 0 Then
+                Label44.BackColor = Color.Red
+            End If
+            If InStr(Label45.Text, a) = 0 Or InStr(Label45.Text, b) = 0 And InStr(Label45.Text, c) = 0 Then
+                Label45.BackColor = Color.Red
+            End If
+            If InStr(Label46.Text, a) = 0 Or InStr(Label46.Text, b) = 0 And InStr(Label46.Text, c) = 0 Then
+                Label46.BackColor = Color.Red
+            End If
+            If InStr(Label47.Text, a) = 0 Or InStr(Label47.Text, b) = 0 And InStr(Label47.Text, c) = 0 Then
+                Label47.BackColor = Color.Red
+            End If
+            If InStr(Label48.Text, a) = 0 Or InStr(Label48.Text, b) = 0 And InStr(Label48.Text, c) = 0 Then
+                Label48.BackColor = Color.Red
+            End If
+            If InStr(Label49.Text, a) = 0 Or InStr(Label49.Text, b) = 0 And InStr(Label49.Text, c) = 0 Then
+                Label49.BackColor = Color.Red
+            End If
+        End If
+
+
+        If RadioButton7.Checked = True Then
+            Dim a As String
+            Dim b As String
+            Dim c As String
+            Dim d As String
+            a = "Ⅱ"
+            b = "Ⅰ"
+            c = "Ⅲ"
+            d = "Ⅳ"
+            If InStr(Label28.Text, a) = 0 And InStr(Label28.Text, b) = 0 And InStr(Label28.Text, c) = 0 And InStr(Label28.Text, d) = 0 Then
+                Label28.BackColor = Color.Red
+            End If
+            If InStr(Label29.Text, a) = 0 And InStr(Label29.Text, b) = 0 And InStr(Label29.Text, c) = 0 And InStr(Label29.Text, d) = 0 Then
+                Label29.BackColor = Color.Red
+            End If
+            If InStr(Label30.Text, a) = 0 And InStr(Label30.Text, b) = 0 And InStr(Label30.Text, c) = 0 And InStr(Label30.Text, d) = 0 Then
+                Label30.BackColor = Color.Red
+            End If
+            If InStr(Label31.Text, a) = 0 And InStr(Label31.Text, b) = 0 And InStr(Label31.Text, c) = 0 And InStr(Label31.Text, d) = 0 Then
+                Label31.BackColor = Color.Red
+            End If
+            If InStr(Label32.Text, a) = 0 And InStr(Label32.Text, b) = 0 And InStr(Label32.Text, c) = 0 And InStr(Label32.Text, d) = 0 Then
+                Label32.BackColor = Color.Red
+            End If
+            If InStr(Label33.Text, a) = 0 And InStr(Label33.Text, b) = 0 And InStr(Label33.Text, c) = 0 And InStr(Label33.Text, d) = 0 Then
+                Label33.BackColor = Color.Red
+            End If
+            If InStr(Label34.Text, a) = 0 And InStr(Label34.Text, b) = 0 And InStr(Label34.Text, c) = 0 And InStr(Label34.Text, d) = 0 Then
+                Label34.BackColor = Color.Red
+            End If
+            If InStr(Label35.Text, a) = 0 And InStr(Label35.Text, b) = 0 And InStr(Label35.Text, c) = 0 And InStr(Label35.Text, d) = 0 Then
+                Label35.BackColor = Color.Red
+            End If
+            If InStr(Label36.Text, a) = 0 And InStr(Label36.Text, b) = 0 And InStr(Label36.Text, c) = 0 And InStr(Label36.Text, d) = 0 Then
+                Label36.BackColor = Color.Red
+            End If
+            If InStr(Label37.Text, a) = 0 And InStr(Label37.Text, b) = 0 And InStr(Label37.Text, c) = 0 And InStr(Label37.Text, d) = 0 Then
+                Label37.BackColor = Color.Red
+            End If
+            If InStr(Label38.Text, a) = 0 And InStr(Label38.Text, b) = 0 And InStr(Label38.Text, c) = 0 And InStr(Label38.Text, d) = 0 Then
+                Label38.BackColor = Color.Red
+            End If
+            If InStr(Label39.Text, a) = 0 And InStr(Label39.Text, b) = 0 And InStr(Label39.Text, c) = 0 And InStr(Label39.Text, d) = 0 Then
+                Label39.BackColor = Color.Red
+            End If
+            If InStr(Label40.Text, a) = 0 And InStr(Label40.Text, b) = 0 And InStr(Label40.Text, c) = 0 And InStr(Label40.Text, d) = 0 Then
+                Label40.BackColor = Color.Red
+            End If
+            If InStr(Label41.Text, a) = 0 And InStr(Label41.Text, b) = 0 And InStr(Label41.Text, c) = 0 And InStr(Label41.Text, d) = 0 Then
+                Label41.BackColor = Color.Red
+            End If
+            If InStr(Label42.Text, a) = 0 And InStr(Label42.Text, b) = 0 And InStr(Label42.Text, c) = 0 And InStr(Label42.Text, d) = 0 Then
+                Label42.BackColor = Color.Red
+            End If
+            If InStr(Label43.Text, a) = 0 And InStr(Label43.Text, b) = 0 And InStr(Label43.Text, c) = 0 And InStr(Label43.Text, d) = 0 Then
+                Label43.BackColor = Color.Red
+            End If
+            If InStr(Label44.Text, a) = 0 And InStr(Label44.Text, b) = 0 And InStr(Label44.Text, c) = 0 And InStr(Label44.Text, d) = 0 Then
+                Label44.BackColor = Color.Red
+            End If
+            If InStr(Label45.Text, a) = 0 And InStr(Label45.Text, b) = 0 And InStr(Label45.Text, c) = 0 And InStr(Label45.Text, d) = 0 Then
+                Label45.BackColor = Color.Red
+            End If
+            If InStr(Label46.Text, a) = 0 And InStr(Label46.Text, b) = 0 And InStr(Label46.Text, c) = 0 And InStr(Label46.Text, d) = 0 Then
+                Label46.BackColor = Color.Red
+            End If
+            If InStr(Label47.Text, a) = 0 And InStr(Label47.Text, b) = 0 And InStr(Label47.Text, c) = 0 And InStr(Label47.Text, d) = 0 Then
+                Label47.BackColor = Color.Red
+            End If
+            If InStr(Label48.Text, a) = 0 And InStr(Label48.Text, b) = 0 And InStr(Label48.Text, c) = 0 And InStr(Label48.Text, d) = 0 Then
+                Label48.BackColor = Color.Red
+            End If
+            If InStr(Label49.Text, a) = 0 And InStr(Label49.Text, b) = 0 And InStr(Label49.Text, c) = 0 And InStr(Label49.Text, d) = 0 Then
+                Label49.BackColor = Color.Red
+            End If
+        End If
+
+
+        If RadioButton8.Checked = True Then
+            Dim a As String
+            a = "劣于"
+            If InStr(Label28.Text, a) = 1 Then
+                Label28.BackColor = Color.Red
+            End If
+            If InStr(Label29.Text, a) = 1 Then
+                Label29.BackColor = Color.Red
+            End If
+            If InStr(Label30.Text, a) = 1 Then
+                Label30.BackColor = Color.Red
+            End If
+            If InStr(Label31.Text, a) = 1 Then
+                Label31.BackColor = Color.Red
+            End If
+            If InStr(Label32.Text, a) = 1 Then
+                Label32.BackColor = Color.Red
+            End If
+            If InStr(Label33.Text, a) = 1 Then
+                Label33.BackColor = Color.Red
+            End If
+            If InStr(Label34.Text, a) = 1 Then
+                Label34.BackColor = Color.Red
+            End If
+            If InStr(Label35.Text, a) = 1 Then
+                Label35.BackColor = Color.Red
+            End If
+            If InStr(Label36.Text, a) = 1 Then
+                Label36.BackColor = Color.Red
+            End If
+            If InStr(Label37.Text, a) = 1 Then
+                Label37.BackColor = Color.Red
+            End If
+            If InStr(Label38.Text, a) = 1 Then
+                Label38.BackColor = Color.Red
+            End If
+            If InStr(Label39.Text, a) = 1 Then
+                Label39.BackColor = Color.Red
+            End If
+            If InStr(Label40.Text, a) = 1 Then
+                Label40.BackColor = Color.Red
+            End If
+            If InStr(Label41.Text, a) = 1 Then
+                Label41.BackColor = Color.Red
+            End If
+            If InStr(Label42.Text, a) = 1 Then
+                Label42.BackColor = Color.Red
+            End If
+            If InStr(Label43.Text, a) = 1 Then
+                Label43.BackColor = Color.Red
+            End If
+            If InStr(Label44.Text, a) = 1 Then
+                Label44.BackColor = Color.Red
+            End If
+            If InStr(Label45.Text, a) = 1 Then
+                Label45.BackColor = Color.Red
+            End If
+            If InStr(Label46.Text, a) = 1 Then
+                Label46.BackColor = Color.Red
+            End If
+            If InStr(Label47.Text, a) = 1 Then
+                Label47.BackColor = Color.Red
+            End If
+            If InStr(Label48.Text, a) = 1 Then
+                Label48.BackColor = Color.Red
+            End If
+            If InStr(Label49.Text, a) = 1 Then
+                Label49.BackColor = Color.Red
+            End If
+        End If
+    End Sub
+
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        Dim a As String
+        a = "不"
+        If InStr(Label67.Text, a) > 0 Then
+            Label67.BackColor = Color.Red
+        End If
+        If InStr(Label68.Text, a) > 1 Then
+            Label68.BackColor = Color.Red
+        End If
+        If InStr(Label69.Text, a) > 1 Then
+            Label69.BackColor = Color.Red
+        End If
+        If InStr(Label70.Text, a) > 1 Then
+            Label70.BackColor = Color.Red
+        End If
+        If InStr(Label71.Text, a) > 1 Then
+            Label71.BackColor = Color.Red
+        End If
+        If InStr(Label72.Text, a) > 1 Then
+            Label72.BackColor = Color.Red
+        End If
+        If InStr(Label73.Text, a) > 1 Then
+            Label73.BackColor = Color.Red
+        End If
+        If InStr(Label74.Text, a) > 1 Then
+            Label74.BackColor = Color.Red
+        End If
+        If InStr(Label75.Text, a) > 1 Then
+            Label75.BackColor = Color.Red
+        End If
+        If InStr(Label76.Text, a) > 1 Then
+            Label76.BackColor = Color.Red
+        End If
+        If InStr(Label77.Text, a) > 1 Then
+            Label77.BackColor = Color.Red
+        End If
+        If InStr(Label78.Text, a) > 1 Then
+            Label78.BackColor = Color.Red
+        End If
+        If InStr(Label79.Text, a) > 1 Then
+            Label79.BackColor = Color.Red
+        End If
+        If InStr(Label93.Text, a) > 1 Then
+            Label93.BackColor = Color.Red
+        End If
+        If InStr(Label94.Text, a) > 1 Then
+            Label94.BackColor = Color.Red
+        End If
+        If InStr(Label95.Text, a) > 1 Then
+            Label95.BackColor = Color.Red
+        End If
+        If InStr(Label96.Text, a) > 1 Then
+            Label96.BackColor = Color.Red
+        End If
+        If InStr(Label97.Text, a) > 1 Then
+            Label97.BackColor = Color.Red
+        End If
+        If InStr(Label98.Text, a) > 1 Then
+            Label98.BackColor = Color.Red
+        End If
+        If InStr(Label99.Text, a) > 1 Then
+            Label99.BackColor = Color.Red
+        End If
+        If InStr(Label100.Text, a) > 1 Then
+            Label100.BackColor = Color.Red
+        End If
+        If InStr(Label101.Text, a) > 1 Then
+            Label101.BackColor = Color.Red
+        End If
+        If InStr(Label102.Text, a) > 1 Then
+            Label102.BackColor = Color.Red
+        End If
+        If InStr(Label103.Text, a) > 1 Then
+            Label103.BackColor = Color.Red
+        End If
+        If InStr(Label104.Text, a) > 1 Then
+            Label104.BackColor = Color.Red
+        End If
+        If InStr(Label105.Text, a) > 1 Then
+            Label105.BackColor = Color.Red
+        End If
+        If InStr(Label106.Text, a) > 1 Then
+            Label106.BackColor = Color.Red
+        End If
+        If InStr(Label107.Text, a) > 1 Then
+            Label107.BackColor = Color.Red
+        End If
+    End Sub
+
+    Private Sub 水质判断ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 水质判断ToolStripMenuItem.Click
+        Me.Button1_Click(sender, e)
+    End Sub
+
+    Private Sub 水质查询ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 水质查询ToolStripMenuItem.Click
+        btn_inq_dibiao_Click(sender, e)
+    End Sub
+
+    Private Sub 生成报告ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 生成报告ToolStripMenuItem.Click
+        btn_save_dibiao_Click(sender, e)
+    End Sub
+
+    Private Sub 水质判断ToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 水质判断ToolStripMenuItem1.Click
+        Button1_Click(sender, e)
+    End Sub
+
+    Private Sub 水质查询ToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 水质查询ToolStripMenuItem1.Click
+        Button2_Click(sender, e)
+    End Sub
+
+    Private Sub 生成报告ToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 生成报告ToolStripMenuItem1.Click
+        Button3_Click(sender, e)
+    End Sub
+
+    Private Sub 显示不达标数据ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 显示不达标数据ToolStripMenuItem.Click
+        Button4_Click(sender, e)
+    End Sub
+
+    Private Sub 显示不达标数据ToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 显示不达标数据ToolStripMenuItem1.Click
+        Button5_Click(sender, e)
+    End Sub
+
+    Private Sub 退出ToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 退出ToolStripMenuItem1.Click
+        Me.Close()
+    End Sub
+End Class
